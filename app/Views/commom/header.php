@@ -23,7 +23,6 @@
     <div class="container-fluid">
         <a class="navbar-brand fw-bold" href="/">Meu Sistema</a>
 
-        <!-- Botão mobile -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,12 +33,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/listausuarios">Home</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/carteira">Transações</a>
+                </li>
+                
             </ul>
 
          
             <ul class="navbar-nav align-items-center">
                 <li class="nav-item">
-                    <span class="navbar-user">Usuário: <?= esc(session()->get('user')) ?></span>
+                    <span class="navbar-user">Usuário: <?= esc(session()->get('user_name')) ?></span>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-danger ms-3" href="/">Sair</a>

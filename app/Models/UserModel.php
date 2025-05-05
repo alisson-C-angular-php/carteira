@@ -1,13 +1,13 @@
 <?php
 
-    namespace App\Models;
+namespace App\Models;
 
-    use CodeIgniter\Model;
-    class UserModel extends Model{
+use CodeIgniter\Model;
 
-        protected $table = "tb_usuario";
+class UserModel extends Model
+{
+    protected $table = "tb_usuario";
+    protected $primaryKey = "id";
 
-        protected $primaryKey = "id";
-
-        protected $fillable = ['nome','email','senha'];
-    }
+    protected $allowedFields = ['nome', 'email', 'senha', 'saldo'];
+}

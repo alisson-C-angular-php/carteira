@@ -14,4 +14,14 @@ class AuthService
     {
         return password_hash($password, PASSWORD_BCRYPT);
     }
+
+    /**
+     * Verifica se o usuário está autenticado (sessão iniciada com user_id)
+     * 
+     * @return bool
+     */
+    public static function isAuthenticated(): bool
+    {
+        return session()->has('user_id');
+    }
 }

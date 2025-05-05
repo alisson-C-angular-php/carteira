@@ -1,5 +1,4 @@
 <?php
-
 use CodeIgniter\Router\RouteCollection;
 
 /**
@@ -7,19 +6,19 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 
-
-//auth
+// Rotas públicas (sem autenticação)
 $routes->post('/login','Login::authUser');
-
-
-
-//crud
-
-$routes->get('/listausuarios','Home::userList');
-
+$routes->get('/cadastrarusuario','Login::cadUser');
 $routes->post('/inserirUsuarios','Home::insertUser');
 
+// Rotas protegidas por autenticação
+$routes->group('', ['filter' => 'auth'], function($routes) {
+    $routes->get('/listausuarios','Home::userList');
+    $routes->post('/editarUsuario',  'Home::editUser');
+    $routes->post('/deleteUser',  'Home::deleteUser');
 
-$routes->post('/editarUsuario',  'Home::editUser');
-
-$routes->post('/deleteUser',  'Home::deleteUser');
+    $routes->get('/carteira', 'CarteiraController::index');
+    $routes->post('carteira/transacao', 'CarteiraController::realizarTransacao');
+    $routes->post('carteira/reverter/(:num)', 'CarteiraController::reverter/$1');
+    $routes->get('carteira/reverter/(:num)', 'CarteiraController::reverter/$1');
+});

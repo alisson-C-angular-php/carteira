@@ -16,6 +16,13 @@
                 <h3 class="card-title mb-0">Login</h3>
             </div>
             <div class="card-body">
+                <!-- Exibe a mensagem de erro, caso haja -->
+                <?php if (session()->getFlashdata('error')): ?>
+                    <div class="alert alert-danger">
+                        <?= session()->getFlashdata('error') ?>
+                    </div>
+                <?php endif; ?>
+
                 <form method="POST" action="/login">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
@@ -31,6 +38,7 @@
                         <button type="submit" class="btn btn-primary">Entrar</button>
                     </div>
                 </form>
+                <p>Nao tem uma conta? clique <a href="/cadastrarusuario">aqui</a></p>
             </div>
         </div>
     </div>
