@@ -1,6 +1,7 @@
 <?php
 
 namespace Config;
+use App\Repositories\UserRepository;
 
 use CodeIgniter\Config\BaseService;
 
@@ -19,6 +20,18 @@ use CodeIgniter\Config\BaseService;
  */
 class Services extends BaseService
 {
+
+
+
+
+    public static function userRepository($getShared = true)
+    {
+        if ($getShared) {
+            return static::getSharedInstance('userRepository');
+        }
+
+        return new UserRepository();
+    }
     /*
      * public static function example($getShared = true)
      * {

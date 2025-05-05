@@ -1,0 +1,337 @@
+CRITICAL - 2025-05-05 00:11:04 --> TypeError: App\Services\AuthService::encryptPassword(): Argument #1 ($password) must be of type string, null given, called in C:\xampp\htdocs\carteirafinanceira\app\Controllers\Login.php on line 25
+[Method: POST, Route: login]
+in APPPATH\Services\AuthService.php on line 13.
+ 1 APPPATH\Controllers\Login.php(25): App\Services\AuthService::encryptPassword(null)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->authUser()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+CRITICAL - 2025-05-05 00:12:59 --> TypeError: App\Services\AuthService::encryptPassword(): Argument #1 ($password) must be of type string, null given, called in C:\xampp\htdocs\carteirafinanceira\app\Controllers\Login.php on line 25
+[Method: POST, Route: login]
+in APPPATH\Services\AuthService.php on line 13.
+ 1 APPPATH\Controllers\Login.php(25): App\Services\AuthService::encryptPassword(null)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->authUser()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+ERROR - 2025-05-05 00:30:52 --> mysqli_sql_exception: Incorrect number of arguments for PROCEDURE carteira.sp_validar_login; expected 2, got 1 in C:\xampp\htdocs\carteirafinanceira\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\carteirafinanceira\system\Database\MySQLi\Connection.php(327): mysqli->query('CALL carteira.s...', 0)
+#1 C:\xampp\htdocs\carteirafinanceira\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CALL carteira.s...')
+#2 C:\xampp\htdocs\carteirafinanceira\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CALL carteira.s...')
+#3 C:\xampp\htdocs\carteirafinanceira\app\Controllers\Login.php(28): CodeIgniter\Database\BaseConnection->query('CALL carteira.s...', Array)
+#4 C:\xampp\htdocs\carteirafinanceira\system\CodeIgniter.php(933): App\Controllers\Login->authUser()
+#5 C:\xampp\htdocs\carteirafinanceira\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#6 C:\xampp\htdocs\carteirafinanceira\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\carteirafinanceira\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\carteirafinanceira\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\carteirafinanceira\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 C:\xampp\htdocs\carteirafinanceira\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-05-05 00:30:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Incorrect number of arguments for PROCEDURE carteira.sp_validar_login; expected 2, got 1
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 APPPATH\Controllers\Login.php(28): CodeIgniter\Database\BaseConnection->query('CALL carteira.sp_validar_login(?)', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->authUser()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+CRITICAL - 2025-05-05 00:30:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Incorrect number of arguments for PROCEDURE carteira.sp_validar_login; expected 2, got 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CALL carteira.sp_validar_login(\'carlos.souza@email.com\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CALL carteira.sp_validar_login(\'carlos.souza@email.com\')')
+ 3 APPPATH\Controllers\Login.php(28): CodeIgniter\Database\BaseConnection->query('CALL carteira.sp_validar_login(?)', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->authUser()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+CRITICAL - 2025-05-05 00:30:52 --> [Caused by] mysqli_sql_exception: Incorrect number of arguments for PROCEDURE carteira.sp_validar_login; expected 2, got 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('CALL carteira.sp_validar_login(\'carlos.souza@email.com\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CALL carteira.sp_validar_login(\'carlos.souza@email.com\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CALL carteira.sp_validar_login(\'carlos.souza@email.com\')')
+ 4 APPPATH\Controllers\Login.php(28): CodeIgniter\Database\BaseConnection->query('CALL carteira.sp_validar_login(?)', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->authUser()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+ERROR - 2025-05-05 00:30:57 --> mysqli_sql_exception: Incorrect number of arguments for PROCEDURE carteira.sp_validar_login; expected 2, got 1 in C:\xampp\htdocs\carteirafinanceira\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\carteirafinanceira\system\Database\MySQLi\Connection.php(327): mysqli->query('CALL carteira.s...', 0)
+#1 C:\xampp\htdocs\carteirafinanceira\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CALL carteira.s...')
+#2 C:\xampp\htdocs\carteirafinanceira\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CALL carteira.s...')
+#3 C:\xampp\htdocs\carteirafinanceira\app\Controllers\Login.php(28): CodeIgniter\Database\BaseConnection->query('CALL carteira.s...', Array)
+#4 C:\xampp\htdocs\carteirafinanceira\system\CodeIgniter.php(933): App\Controllers\Login->authUser()
+#5 C:\xampp\htdocs\carteirafinanceira\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#6 C:\xampp\htdocs\carteirafinanceira\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\carteirafinanceira\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\carteirafinanceira\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\carteirafinanceira\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 C:\xampp\htdocs\carteirafinanceira\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-05-05 00:30:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Incorrect number of arguments for PROCEDURE carteira.sp_validar_login; expected 2, got 1
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 APPPATH\Controllers\Login.php(28): CodeIgniter\Database\BaseConnection->query('CALL carteira.sp_validar_login(?)', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->authUser()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+CRITICAL - 2025-05-05 00:30:57 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Incorrect number of arguments for PROCEDURE carteira.sp_validar_login; expected 2, got 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CALL carteira.sp_validar_login(\'carlos.souza@email.com\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CALL carteira.sp_validar_login(\'carlos.souza@email.com\')')
+ 3 APPPATH\Controllers\Login.php(28): CodeIgniter\Database\BaseConnection->query('CALL carteira.sp_validar_login(?)', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->authUser()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+CRITICAL - 2025-05-05 00:30:57 --> [Caused by] mysqli_sql_exception: Incorrect number of arguments for PROCEDURE carteira.sp_validar_login; expected 2, got 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('CALL carteira.sp_validar_login(\'carlos.souza@email.com\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CALL carteira.sp_validar_login(\'carlos.souza@email.com\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CALL carteira.sp_validar_login(\'carlos.souza@email.com\')')
+ 4 APPPATH\Controllers\Login.php(28): CodeIgniter\Database\BaseConnection->query('CALL carteira.sp_validar_login(?)', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->authUser()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+ERROR - 2025-05-05 00:38:21 --> mysqli_sql_exception: Incorrect number of arguments for PROCEDURE carteira.sp_validar_login; expected 2, got 1 in C:\xampp\htdocs\carteirafinanceira\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\carteirafinanceira\system\Database\MySQLi\Connection.php(327): mysqli->query('CALL carteira.s...', 0)
+#1 C:\xampp\htdocs\carteirafinanceira\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CALL carteira.s...')
+#2 C:\xampp\htdocs\carteirafinanceira\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CALL carteira.s...')
+#3 C:\xampp\htdocs\carteirafinanceira\app\Controllers\Login.php(28): CodeIgniter\Database\BaseConnection->query('CALL carteira.s...', Array)
+#4 C:\xampp\htdocs\carteirafinanceira\system\CodeIgniter.php(933): App\Controllers\Login->authUser()
+#5 C:\xampp\htdocs\carteirafinanceira\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#6 C:\xampp\htdocs\carteirafinanceira\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\carteirafinanceira\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\carteirafinanceira\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\carteirafinanceira\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 C:\xampp\htdocs\carteirafinanceira\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-05-05 00:38:21 --> CodeIgniter\Database\Exceptions\DatabaseException: Incorrect number of arguments for PROCEDURE carteira.sp_validar_login; expected 2, got 1
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 APPPATH\Controllers\Login.php(28): CodeIgniter\Database\BaseConnection->query('CALL carteira.sp_validar_login(?)', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->authUser()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+CRITICAL - 2025-05-05 00:38:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Incorrect number of arguments for PROCEDURE carteira.sp_validar_login; expected 2, got 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CALL carteira.sp_validar_login(\'carlos.souza@email.com\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CALL carteira.sp_validar_login(\'carlos.souza@email.com\')')
+ 3 APPPATH\Controllers\Login.php(28): CodeIgniter\Database\BaseConnection->query('CALL carteira.sp_validar_login(?)', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->authUser()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+CRITICAL - 2025-05-05 00:38:21 --> [Caused by] mysqli_sql_exception: Incorrect number of arguments for PROCEDURE carteira.sp_validar_login; expected 2, got 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('CALL carteira.sp_validar_login(\'carlos.souza@email.com\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CALL carteira.sp_validar_login(\'carlos.souza@email.com\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CALL carteira.sp_validar_login(\'carlos.souza@email.com\')')
+ 4 APPPATH\Controllers\Login.php(28): CodeIgniter\Database\BaseConnection->query('CALL carteira.sp_validar_login(?)', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->authUser()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+ERROR - 2025-05-05 00:38:25 --> mysqli_sql_exception: Incorrect number of arguments for PROCEDURE carteira.sp_validar_login; expected 2, got 1 in C:\xampp\htdocs\carteirafinanceira\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\carteirafinanceira\system\Database\MySQLi\Connection.php(327): mysqli->query('CALL carteira.s...', 0)
+#1 C:\xampp\htdocs\carteirafinanceira\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CALL carteira.s...')
+#2 C:\xampp\htdocs\carteirafinanceira\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CALL carteira.s...')
+#3 C:\xampp\htdocs\carteirafinanceira\app\Controllers\Login.php(28): CodeIgniter\Database\BaseConnection->query('CALL carteira.s...', Array)
+#4 C:\xampp\htdocs\carteirafinanceira\system\CodeIgniter.php(933): App\Controllers\Login->authUser()
+#5 C:\xampp\htdocs\carteirafinanceira\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#6 C:\xampp\htdocs\carteirafinanceira\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\carteirafinanceira\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\carteirafinanceira\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\carteirafinanceira\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 C:\xampp\htdocs\carteirafinanceira\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-05-05 00:38:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Incorrect number of arguments for PROCEDURE carteira.sp_validar_login; expected 2, got 1
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 APPPATH\Controllers\Login.php(28): CodeIgniter\Database\BaseConnection->query('CALL carteira.sp_validar_login(?)', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->authUser()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+CRITICAL - 2025-05-05 00:38:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Incorrect number of arguments for PROCEDURE carteira.sp_validar_login; expected 2, got 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CALL carteira.sp_validar_login(\'carlos.souza@email.com\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CALL carteira.sp_validar_login(\'carlos.souza@email.com\')')
+ 3 APPPATH\Controllers\Login.php(28): CodeIgniter\Database\BaseConnection->query('CALL carteira.sp_validar_login(?)', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->authUser()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+CRITICAL - 2025-05-05 00:38:25 --> [Caused by] mysqli_sql_exception: Incorrect number of arguments for PROCEDURE carteira.sp_validar_login; expected 2, got 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('CALL carteira.sp_validar_login(\'carlos.souza@email.com\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CALL carteira.sp_validar_login(\'carlos.souza@email.com\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CALL carteira.sp_validar_login(\'carlos.souza@email.com\')')
+ 4 APPPATH\Controllers\Login.php(28): CodeIgniter\Database\BaseConnection->query('CALL carteira.sp_validar_login(?)', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->authUser()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+CRITICAL - 2025-05-05 01:27:03 --> ErrorException: Array to string conversion
+[Method: POST, Route: login]
+in APPPATH\Controllers\Login.php on line 34.
+ 1 APPPATH\Controllers\Login.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\carteirafinanceira\\app\\Controllers\\Login.php', 34)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->authUser()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+CRITICAL - 2025-05-05 01:49:15 --> ParseError: syntax error, unexpected token "{"
+[Method: POST, Route: login]
+in APPPATH\Controllers\Login.php on line 50.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\carteirafinanceira\\app\\Controllers\\Login.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Login')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Login')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Login', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+CRITICAL - 2025-05-05 02:05:59 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 941.
+ 1 SYSTEMPATH\Model.php(714): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(920): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Login.php(35): CodeIgniter\Model->__call('where', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->authUser()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+CRITICAL - 2025-05-05 02:06:08 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 941.
+ 1 SYSTEMPATH\Model.php(714): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(920): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Login.php(35): CodeIgniter\Model->__call('where', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->authUser()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+CRITICAL - 2025-05-05 02:16:07 --> ErrorException: Undefined array key "id"
+[Method: POST, Route: login]
+in APPPATH\Controllers\Login.php on line 37.
+ 1 APPPATH\Controllers\Login.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\carteirafinanceira\\app\\Controllers\\Login.php', 37)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->authUser()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+CRITICAL - 2025-05-05 02:22:42 --> ErrorException: Undefined array key "id"
+[Method: POST, Route: login]
+in APPPATH\Controllers\Login.php on line 34.
+ 1 APPPATH\Controllers\Login.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\carteirafinanceira\\app\\Controllers\\Login.php', 34)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->authUser()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+CRITICAL - 2025-05-05 02:23:19 --> ErrorException: Undefined array key "id"
+[Method: POST, Route: login]
+in APPPATH\Controllers\Login.php on line 34.
+ 1 APPPATH\Controllers\Login.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\carteirafinanceira\\app\\Controllers\\Login.php', 34)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->authUser()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+CRITICAL - 2025-05-05 02:25:44 --> ErrorException: Undefined global variable $_SESSION
+[Method: GET, Route: listausuarios]
+in APPPATH\Views\commom\header.php on line 16.
+ 1 APPPATH\Views\commom\header.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\carteirafinanceira\\app\\Views\\commom\\header.php', 16)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\carteirafinanceira\\app\\Views\\commom\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('commom/header', [], true)
+ 5 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('user_view', [], true)
+ 6 APPPATH\Controllers\Home.php(27): view('user_view', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->userList()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')
+CRITICAL - 2025-05-05 02:25:57 --> ErrorException: Undefined global variable $_SESSION
+[Method: GET, Route: listausuarios]
+in APPPATH\Views\commom\header.php on line 16.
+ 1 APPPATH\Views\commom\header.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\carteirafinanceira\\app\\Views\\commom\\header.php', 16)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\carteirafinanceira\\app\\Views\\commom\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('commom/header', [], true)
+ 5 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('user_view', [], true)
+ 6 APPPATH\Controllers\Home.php(27): view('user_view', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->userList()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\carteirafinanceira\\public\\index.php')

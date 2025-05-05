@@ -25,7 +25,7 @@ BEGIN
     FROM 
         tb_usuario
     WHERE 
-        email = p_email AND senha = p_senha;
+        email = p_email;
 END;
 //
 
