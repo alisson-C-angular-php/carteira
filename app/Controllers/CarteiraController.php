@@ -2,13 +2,16 @@
 
 namespace App\Controllers;
 
-use App\Repository\TransactionRepository;
-use App\Services\WalletService;
-use App\Models\TransactionModel;
-use App\Models\BalanceModel;
+use App\Infrastructure\Models\UserModel;
+use App\Infrastructure\Repository\TransactionRepository;
+use App\Infrastructure\Repository\UserRepository;
+
+use App\Domain\Services\WalletService;
+use App\Infrastructure\Models\TransactionModel;
 
 class CarteiraController extends BaseController
-{
+{ 
+
     protected $walletService;
     protected $transactionRepository;
 
@@ -20,7 +23,6 @@ class CarteiraController extends BaseController
 
     public function index()
     {
-        $transacaoModel = new TransactionModel();
 
         $transacoes = $this->transactionRepository->getHistoricoPorTransacoes(session()->get('user_id'));
         $saldo = $this->transactionRepository->getSaldoAtualUsuario(session()->get('user_id'));
@@ -30,6 +32,8 @@ class CarteiraController extends BaseController
             'saldo' => $saldo
         ]);
     }
+
+    
 
     public function reverter(int $transacaoId)
     {

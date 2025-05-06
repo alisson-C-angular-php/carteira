@@ -5,7 +5,6 @@
 <div class="container">
     <h1>Carteira Financeira</h1>
 
-    <!-- Exibição de Erro -->
     <?php if (session()->getFlashdata('error')): ?>
         <div class="alert alert-danger">
             <?= session()->getFlashdata('error') ?>
@@ -19,7 +18,6 @@
         </div>
     <?php endif; ?>
 
-    <!-- Formulário de Transação -->
     <form method="post" action="<?= site_url('carteira/transacao') ?>">
         <div class="form-group">
             <label for="tipo">Tipo de Transação</label>
@@ -61,7 +59,6 @@
         window.addEventListener('load', toggleDestinoField);
     </script>
 
-    <!-- Tabela de Histórico de Transações -->
     <h2>Histórico de Transações</h2>
     <table class="table">
         <thead>
@@ -76,29 +73,35 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($transacoes as $transacao): ?>
-                <tr>
-                    <td><?= $transacao['user_from_id'] ?></td>
-                    <td><?= ucfirst($transacao['tipo']) ?></td>
-                    <td>R$ <?= number_format($transacao['valor'], 2, ',', '.') ?></td>
-                    <td><?= date('d/m/Y H:i:s', strtotime($transacao['criado_em'])) ?></td>
-                    <td><?= $transacao['tipo'] ?></td>
-                    <td>
-                        <?= $transacao['reversivel'] ? '<span class="text-success">Sim</span>' : '<span class="text-danger">Não</span>' ?>
-                    </td>
-                    <td>
-                        <?php if ($transacao['reversivel']): ?>
-                            <form action="<?= site_url('carteira/reverter/' . $transacao['id']) ?>" method="POST"
-                                onsubmit="return confirm('Tem certeza que deseja reverter esta transação?');">
-                                <button type="submit" class="btn btn-danger">Reverter</button>
-                            </form>
-                        <?php else: ?>
-                            <button class="btn btn-secondary" disabled>Não Reversível</button>
-                        <?php endif; ?>
-                    </td>
+        <?php if (empty($transacoes)): ?>
+    <tr>
+        <td colspan="7" class="text-center">Nenhuma transação encontrada.</td>
+    </tr>
+<?php else: ?>
+    <?php foreach ($transacoes as $transacao): ?>
+        <tr>
+            <td><?= $transacao['user_from_id'] ?></td>
+            <td><?= ucfirst($transacao['tipo']) ?></td>
+            <td>R$ <?= number_format($transacao['valor'], 2, ',', '.') ?></td>
+            <td><?= date('d/m/Y H:i:s', strtotime($transacao['criado_em'])) ?></td>
+            <td><?= $transacao['tipo'] ?></td>
+            <td>
+                <?= $transacao['reversivel'] ? '<span class="text-success">Sim</span>' : '<span class="text-danger">Não</span>' ?>
+            </td>
+            <td>
+                <?php if ($transacao['reversivel']): ?>
+                    <form action="<?= site_url('carteira/reverter/' . $transacao['id']) ?>" method="POST"
+                        onsubmit="return confirm('Tem certeza que deseja reverter esta transação?');">
+                        <button type="submit" class="btn btn-danger">Reverter</button>
+                    </form>
+                <?php else: ?>
+                    <button class="btn btn-secondary" disabled>Não Reversível</button>
+                <?php endif; ?>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+<?php endif; ?>
 
-                </tr>
-            <?php endforeach; ?>
         </tbody>
     </table>
 

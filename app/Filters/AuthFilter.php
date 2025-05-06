@@ -2,7 +2,7 @@
 
 namespace App\Filters;
 
-use App\Services\AuthService;
+use App\Domain\Services\AuthService;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Filters\FilterInterface;

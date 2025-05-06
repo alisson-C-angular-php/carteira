@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\LoginModel;
-use App\Services\AuthService;
+use App\Infrastructure\Models\LoginModel;
+use App\Domain\Services\AuthService;
 
 class Login extends BaseController
 {

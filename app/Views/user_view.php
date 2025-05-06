@@ -3,7 +3,7 @@
 
 
 <div class="container my-4">
-    <h1 class="mb-4 text-primary">Gerenciamento de Registros</h1>
+    <h1 class="mb-4 ">Gerenciamento de Registros</h1>
     
     <button class="btn btn-success mb-3" onclick="openModal()">
         Adicionar Novo

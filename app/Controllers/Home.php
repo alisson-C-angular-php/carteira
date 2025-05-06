@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\UserModel;
-use App\Repository\UserRepository;
+use App\Infrastructure\Models\UserModel;
+use App\Infrastructure\Repository\UserRepository;
+
 class Home extends BaseController
 {
 
@@ -23,7 +24,7 @@ class Home extends BaseController
     public function userList(): string
     {
         $userModel = new UserModel();
-        $data['users'] = $userModel->orderBy('id', 'desc')->findAll();
+        $data[] = $this->userRepository->findAll();
         return view('user_view', $data);
     }
 
