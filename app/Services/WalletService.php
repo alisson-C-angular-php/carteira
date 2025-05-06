@@ -8,17 +8,21 @@ use App\Models\TransactionModel;
 
 class WalletService
 {
-    private $transactionRepository;
+    protected $transactionRepository;
     protected $userModel;
 
     protected $transactionModel;
 
-    public function __construct()
-    {
-        $this->transactionRepository = new TransactionRepository();
-        $this->userModel = new UserModel();
-        $this->transactionModel = new TransactionModel();
+    public function __construct(
+        TransactionRepository $transactionRepository,
+        UserModel $userModel,
+        TransactionModel $transactionModel
+    ) {
+        $this->transactionRepository = $transactionRepository;
+        $this->userModel = $userModel;
+        $this->transactionModel = $transactionModel;
     }
+    
 
     public function deposit(int $userId, float $valor)
     {

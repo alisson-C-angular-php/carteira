@@ -119,24 +119,52 @@ DELIMITER ;
 
 
 DELIMITER //
-
-CREATE PROCEDURE `sp_update_reverte_operacao` (
-    IN p_user_id INT,
-    IN p_valor_remover DECIMAL(10,2)
+CREATE PROCEDURE sp_reverter_transacao(
+    IN p_transacao_id INT
 )
 BEGIN
-    DECLARE usuario_saldo DECIMAL(10,2);
-    DECLARE novo_saldo DECIMAL(10,2);
+    DECLARE v_tipo VARCHAR(50);
+    DECLARE v_valor DECIMAL(10,2);
+    DECLARE v_user_from INT;
+    DECLARE v_user_to INT;
+    DECLARE v_reversivel BOOLEAN;
+    DECLARE v_ja_revertida BOOLEAN DEFAULT FALSE;
 
-    SELECT saldo INTO usuario_saldo
-    FROM tb_usuario
-    WHERE id = p_user_id;
+    -- Verifica se a transação existe e pega os dados
+    SELECT 
+        tipo, valor, user_from_id, user_to_id, reversivel
+    INTO 
+        v_tipo, v_valor, v_user_from, v_user_to, v_reversivel
+    FROM tb_transacoes
+    WHERE id = p_transacao_id;
 
-    SET novo_saldo = usuario_saldo - p_valor_remover;
+    SELECT COUNT(*) INTO v_ja_revertida
+    FROM tb_transacoes
+    WHERE id = p_transacao_id AND tipo = 'reversao';
 
-    UPDATE tb_usuario
-    SET saldo = novo_saldo
-    WHERE id = p_user_id;
+    IF v_ja_revertida OR NOT v_reversivel THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Transação não pode ser revertida';
+    END IF;
+
+    IF v_tipo = 'deposito' THEN
+        UPDATE tb_usuario SET saldo = saldo - v_valor WHERE id = v_user_to;
+
+    ELSEIF v_tipo = 'transferencia' THEN
+        UPDATE tb_usuario SET saldo = saldo + v_valor WHERE id = v_user_from;
+        UPDATE tb_usuario SET saldo = saldo - v_valor WHERE id = v_user_to;
+    END IF;
+
+    INSERT INTO tb_transacoes (
+        user_from_id,
+        user_to_id,
+        valor,
+        tipo,
+        reversivel,
+        criado_em
+    ) VALUES (
+        v_user_to, v_user_from, v_valor, 'reversao', FALSE, NOW()
+    );
+
 END//
 
 DELIMITER ;

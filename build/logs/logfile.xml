@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="C:\xampp\htdocs\carteirafinanceira\phpunit.xml.dist" tests="9" assertions="27" errors="0" failures="0" skipped="0" time="0.163054">
+    <testsuite name="App" tests="9" assertions="27" errors="0" failures="0" skipped="0" time="0.163054">
+      <testsuite name="ExampleDatabaseTest" file="C:\xampp\htdocs\carteirafinanceira\tests\database\ExampleDatabaseTest.php" tests="2" assertions="3" errors="0" failures="0" skipped="0" time="0.079395">
+        <testcase name="testModelFindAll" file="C:\xampp\htdocs\carteirafinanceira\tests\database\ExampleDatabaseTest.php" line="17" class="ExampleDatabaseTest" classname="ExampleDatabaseTest" assertions="1" time="0.067138"/>
+        <testcase name="testSoftDeleteLeavesRow" file="C:\xampp\htdocs\carteirafinanceira\tests\database\ExampleDatabaseTest.php" line="28" class="ExampleDatabaseTest" classname="ExampleDatabaseTest" assertions="2" time="0.012257"/>
+      </testsuite>
+      <testsuite name="ExampleSessionTest" file="C:\xampp\htdocs\carteirafinanceira\tests\session\ExampleSessionTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.003855">
+        <testcase name="testSessionSimple" file="C:\xampp\htdocs\carteirafinanceira\tests\session\ExampleSessionTest.php" line="10" class="ExampleSessionTest" classname="ExampleSessionTest" assertions="1" time="0.003855"/>
+      </testsuite>
+      <testsuite name="HealthTest" file="C:\xampp\htdocs\carteirafinanceira\tests\unit\HealthTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.013115">
+        <testcase name="testIsDefinedAppPath" file="C:\xampp\htdocs\carteirafinanceira\tests\unit\HealthTest.php" line="12" class="HealthTest" classname="HealthTest" assertions="1" time="0.001386"/>
+        <testcase name="testBaseUrlHasBeenSet" file="C:\xampp\htdocs\carteirafinanceira\tests\unit\HealthTest.php" line="17" class="HealthTest" classname="HealthTest" assertions="1" time="0.011728"/>
+      </testsuite>
+      <testsuite name="Tests\App\Services\WalletTest" file="C:\xampp\htdocs\carteirafinanceira\tests\unit\WalletTest.php" tests="4" assertions="21" errors="0" failures="0" skipped="0" time="0.066688">
+        <testcase name="testDepositComUsuarioValido" file="C:\xampp\htdocs\carteirafinanceira\tests\unit\WalletTest.php" line="43" class="Tests\App\Services\WalletTest" classname="Tests.App.Services.WalletTest" assertions="5" time="0.036051"/>
+        <testcase name="testDepositUsuarioNaoEncontrado" file="C:\xampp\htdocs\carteirafinanceira\tests\unit\WalletTest.php" line="63" class="Tests\App\Services\WalletTest" classname="Tests.App.Services.WalletTest" assertions="2" time="0.004047"/>
+        <testcase name="testTransferenciaValida" file="C:\xampp\htdocs\carteirafinanceira\tests\unit\WalletTest.php" line="73" class="Tests\App\Services\WalletTest" classname="Tests.App.Services.WalletTest" assertions="12" time="0.025366"/>
+        <testcase name="testTransferenciaSaldoInsuficiente" file="C:\xampp\htdocs\carteirafinanceira\tests\unit\WalletTest.php" line="107" class="Tests\App\Services\WalletTest" classname="Tests.App.Services.WalletTest" assertions="2" time="0.001224"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
