@@ -35,8 +35,8 @@ A estrutura segue o padrão hexagonal, separando as responsabilidades em camadas
 Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/carteirafinanceira](https://github.com/alisson-C-angular-php/carteira.git
-cd carteirafinanceira
+git clone https://github.com/alisson-C-angular-php/carteira.git
+cd carteira
 docker-compose up -d
 ```
 
