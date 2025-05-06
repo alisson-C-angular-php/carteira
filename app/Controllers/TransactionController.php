@@ -9,7 +9,7 @@ use App\Infrastructure\Repository\UserRepository;
 use App\Domain\Services\WalletService;
 use App\Infrastructure\Models\TransactionModel;
 
-class CarteiraController extends BaseController
+class TransactionController extends BaseController
 { 
 
     protected $walletService;

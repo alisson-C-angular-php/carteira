@@ -10,8 +10,8 @@ Health
  [x] Base url has been set
 
 Wallet (Tests\App\Services\Wallet)
- [x] Deposit com usuario valido
- [x] Deposit usuario nao encontrado
- [x] Transferencia valida
- [x] Transferencia saldo insuficiente
+ [ ] Deposit com usuario valido
+ [ ] Deposit usuario nao encontrado
+ [ ] Transferencia valida
+ [ ] Transferencia saldo insuficiente
 

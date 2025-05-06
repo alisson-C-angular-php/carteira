@@ -105,6 +105,7 @@ DELIMITER //
 CREATE  PROCEDURE sp_select_historico_transacoes (IN p_usuario_id INT)
 BEGIN
 	select
+        id,
         user_from_id,
         user_to_id,
         valor,
