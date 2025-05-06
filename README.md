@@ -1,12 +1,21 @@
 # 💰 Carteira Financeira - CodeIgniter 4
 
-Este é um sistema simples de **carteira digital** desenvolvido com **CodeIgniter 4**. Ele permite:
+Este é um sistema de **carteira digital** desenvolvido com **CodeIgniter 4**, aplicando o padrão de arquitetura **hexagonal (Ports and Adapters)**. Ele permite:
 
-- Cadastrar usuários
-- Realizar depósitos
-- Fazer transferências
-- Reverter transações
-- Visualizar histórico de transações e saldo atual
+- ✅ Cadastro de usuários
+- 💵 Realização de depósitos e transferências
+- ↩️ Reversão de transações
+- 📊 Visualização de histórico e saldo
+
+---
+
+## 📁 Arquitetura Hexagonal
+
+A estrutura segue o padrão hexagonal, separando as responsabilidades em camadas bem definidas:
+
+- `App\Domain`: Interfaces e regras de negócio
+- `App\Infrastructure`: Repositórios, models e implementação dos serviços
+- `App\Controllers`: Pontos de entrada (adapters)
 
 ---
 
@@ -15,6 +24,7 @@ Este é um sistema simples de **carteira digital** desenvolvido com **CodeIgnite
 - PHP 8.1+
 - Composer
 - Docker e Docker Compose
+
 
 ---
 
@@ -25,6 +35,19 @@ Este é um sistema simples de **carteira digital** desenvolvido com **CodeIgnite
 Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/carteirafinanceira.git
+git clone https://github.com/seu-usuario/carteirafinanceira](https://github.com/alisson-C-angular-php/carteira.git
 cd carteirafinanceira
 docker-compose up -d
+```
+
+Para rodar os teste unitarios instale as dependencias com
+```bash
+composer intall
+```
+
+e execulte no terminal 
+
+```bash
+
+vendor/bin/phpunit           
+```
